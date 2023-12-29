@@ -10,7 +10,7 @@ export default async function Home() {
   const data = await getData();
 
   return (
-    <div className="w-full h-screen flex flex-row gap-3 flex-wrap overflow-auto justify-center items-center pt-4">
+    <div className="w-screen h-screen  overflow-auto">
       <EmployeeChart employees={data} />
     </div>
   );

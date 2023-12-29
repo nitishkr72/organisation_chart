@@ -5,9 +5,75 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
+  --connecting-line-height: 20px;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+}
+
+.node-lines::before,
+.node-lines::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: var(--connecting-line-height);
+  box-sizing: border-box;
+  right: 50%;
+  width: 50%;
+  border-top: 2px solid #bcbcbc;
+}
+
+.node-lines::after {
+  left: 50%;
+  border-left: 2px solid #bcbcbc;
+}
+
+.node-lines:only-of-type {
+  padding: 0;
+}
+.node-lines:only-of-type::before {
+    display: none;
+}
+
+
+.node-lines:first-of-type::before {
+  border: 0 none;
+}
+.node-lines:first-of-type::after {
+  border-radius: 5px 0 0 0;
+}
+
+.node-lines:last-of-type::before {
+  border-right: 2px solid #bcbcbc;
+  border-radius: 0 5px 0 0;
+}
+
+.node-lines:last-of-type::after {
+  border: 0 none;
+}
+
+.children-container {
+  display: flex;
+  padding-inline-start: 0;
+  margin: 0;
+  padding-top: var(--connecting-line-height);
+  position: relative;
+}
+
+.children-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: var(--connecting-line-height);
+  box-sizing: border-box;
+  left: calc(50% - (var(--connecting-line-height) / 2));
+  width: 0;
+  border-left: 2px solid #bcbcbc;
+}
+
+.zoom-container {
+  position: relative;
+  transition: trasform 0.3s ease-in-out;
 }

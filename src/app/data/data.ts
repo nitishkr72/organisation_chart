@@ -122,6 +122,36 @@ const result_data: EmpDataType = {
           reporting_manager: "tanmay@gmail.com",
           team: "Marketing",
         },
+        {
+          name: "Ankush Kumar",
+          email: "ankus@gmail.com",
+          designation: "Brand manager",
+          reporting_manager: "tanmay@gmail.com",
+          team: "Brand Management",
+          managing: [
+            {
+              name: "Vinay Pathak",
+              email: "vinay2@gmail.com",
+              designation: "Associate Brand Manager",
+              reporting_manager: "ankus@gmail.com",
+              team: "Brand Management",
+            },
+            {
+              name: "Shreyas Iyer",
+              email: "shreyas@gmail.com",
+              designation: "Associate Brand Ambassdor",
+              reporting_manager: "ankus@gmail.com",
+              team: "Brand Management",
+            },
+            {
+              name: "Virat Kohli",
+              email: "virat@gmail.com",
+              designation: "Associate Brand Ambassdor",
+              reporting_manager: "ankus@gmail.com",
+              team: "Brand Management",
+            },
+          ],
+        },
       ],
     },
     {
