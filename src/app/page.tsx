@@ -1,5 +1,4 @@
 import EmployeeChart from "./component/EmployeeChart";
-import { EmpDataType } from "./data/data";
 
 const getData = async () => {
   const data = await fetch("http://localhost:3000/api/employees");

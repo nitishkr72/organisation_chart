@@ -1,9 +1,9 @@
-import { EmpDataType } from "../data/data";
+import { EmployeeDataType } from "../type/EmployeeDataType";
 import Card from "../ui_component/Card";
 import Tree, { TreeNode } from "../ui_component/Tree";
 import ZoomContainer from "./ZoomContainer";
 
-function EmployeeTreeNode({ employees }: { employees?: EmpDataType[] }) {
+function EmployeeTreeNode({ employees }: { employees?: EmployeeDataType[] }) {
   return (
     <>
       {employees &&
@@ -39,7 +39,7 @@ function EmployeeTreeNode({ employees }: { employees?: EmpDataType[] }) {
 export default function EmployeeChart({
   employees,
 }: {
-  employees: EmpDataType;
+  employees: EmployeeDataType;
 }) {
   return (
     <ZoomContainer>
