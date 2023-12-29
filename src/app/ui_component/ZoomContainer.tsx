@@ -3,7 +3,7 @@
 import { ReactNode, useState } from "react";
 
 const ZoomContainer = ({ children }: { children: ReactNode }) => {
-  const [zoomLevel, setZoomLevel] = useState(1);
+  const [zoomLevel, setZoomLevel] = useState(0.8);
   function handleZoom(deltaY: number) {
     const zoomStep = 0.01;
     const newZoomLevel =
@@ -16,7 +16,6 @@ const ZoomContainer = ({ children }: { children: ReactNode }) => {
     <div
       className="zoom-container"
       onWheel={(e) => {
-        // e.preventDefault();
         handleZoom(e.deltaY);
       }}
       style={{ transform: `scale(${zoomLevel}) translate(5%, 5%)` }}
