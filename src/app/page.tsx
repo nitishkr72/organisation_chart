@@ -2,7 +2,7 @@ import EmployeeChart from "./component/EmployeeChart";
 import ZoomContainer from "./component/ZoomContainer";
 
 const getData = async () => {
-  const data = await fetch(`${process.env.API_URL}/api/employees`);
+  const data = await fetch(`${process.env.API_URL}api/employees`);
   if (!data.ok) {
     throw new Error("Failed to fetch data");
   }
