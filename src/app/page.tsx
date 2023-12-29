@@ -2,9 +2,11 @@ import EmployeeChart from "./component/EmployeeChart";
 import ZoomContainer from "./component/ZoomContainer";
 
 const getData = async () => {
-  const data = await fetch("http://localhost:3000/api/employees");
-  const json_data = data.json();
-  return json_data;
+  const data = await fetch(`${process.env.API_URL}/api/employees`);
+  if (!data.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return data.json();
 };
 
 export default async function Home() {
