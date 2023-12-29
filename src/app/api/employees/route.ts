@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 connectDb();
 
-function getNestedObject(data, managerEmail) {
+function getNestedObject(data: any[], managerEmail: string | null) {
   const result = [];
 
   for (const employee of data) {
