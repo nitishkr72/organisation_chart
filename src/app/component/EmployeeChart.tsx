@@ -1,7 +1,6 @@
 import { EmployeeDataType } from "../type/EmployeeDataType";
 import Card from "../ui_component/Card";
 import Tree, { TreeNode } from "../ui_component/Tree";
-import ZoomContainer from "./ZoomContainer";
 
 function EmployeeTreeNode({ employees }: { employees?: EmployeeDataType[] }) {
   return (
@@ -42,20 +41,18 @@ export default function EmployeeChart({
   employees: EmployeeDataType;
 }) {
   return (
-    <ZoomContainer>
-      <div className="w-full h-full flex justify-center items-center">
-        <Tree
-          label={
-            <Card
-              name={employees.name}
-              team={employees.team}
-              role={employees.role}
-            />
-          }
-        >
-          <EmployeeTreeNode employees={employees.managing} />
-        </Tree>
-      </div>
-    </ZoomContainer>
+    <div className="w-full h-full flex justify-center items-center">
+      <Tree
+        label={
+          <Card
+            name={employees.name}
+            team={employees.team}
+            role={employees.role}
+          />
+        }
+      >
+        <EmployeeTreeNode employees={employees.managing} />
+      </Tree>
+    </div>
   );
 }

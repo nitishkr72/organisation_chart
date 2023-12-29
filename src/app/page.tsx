@@ -1,4 +1,5 @@
 import EmployeeChart from "./component/EmployeeChart";
+import ZoomContainer from "./component/ZoomContainer";
 
 const getData = async () => {
   const data = await fetch("http://localhost:3000/api/employees");
@@ -11,7 +12,9 @@ export default async function Home() {
 
   return (
     <div className="w-screen h-screen  overflow-auto">
-      <EmployeeChart employees={data} />
+      <ZoomContainer>
+        <EmployeeChart employees={data} />
+      </ZoomContainer>
     </div>
   );
 }
