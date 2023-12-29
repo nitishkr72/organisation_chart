@@ -1,9 +1,10 @@
-import { EmpDataType, sendData } from "./data/data";
-import EmployeeChart from "./ui_component/EmployeeChart";
+import EmployeeChart from "./component/EmployeeChart";
+import { EmpDataType } from "./data/data";
 
 const getData = async () => {
-  const data = await sendData();
-  return data;
+  const data = await fetch("http://localhost:3000/api/employees");
+  const json_data = data.json();
+  return json_data;
 };
 
 export default async function Home() {

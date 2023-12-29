@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+/**
+ * Custom Card component
+ * @param param3 name, role, team
+ */
 export default function Card({
   name,
   role,
@@ -19,7 +23,7 @@ export default function Card({
           src="/ic_edit.svg"
           height={24}
           width={24}
-          alt="Profile Picture"
+          alt="Edit Profile"
         />
 
         <Image

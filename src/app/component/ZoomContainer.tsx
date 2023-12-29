@@ -2,6 +2,10 @@
 
 import { ReactNode, useState } from "react";
 
+/**
+ * Add functionality of zoom in and zoom out using mouse scroll event
+ * @param param0 children: ReactNode
+ */
 const ZoomContainer = ({ children }: { children: ReactNode }) => {
   const [zoomLevel, setZoomLevel] = useState(0.8);
   function handleZoom(deltaY: number) {

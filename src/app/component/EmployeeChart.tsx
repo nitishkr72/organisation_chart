@@ -1,6 +1,6 @@
 import { EmpDataType } from "../data/data";
-import Card from "./Card";
-import Tree, { TreeNode } from "./Tree";
+import Card from "../ui_component/Card";
+import Tree, { TreeNode } from "../ui_component/Tree";
 import ZoomContainer from "./ZoomContainer";
 
 function EmployeeTreeNode({ employees }: { employees?: EmpDataType[] }) {
@@ -9,14 +9,11 @@ function EmployeeTreeNode({ employees }: { employees?: EmpDataType[] }) {
       {employees &&
         employees.map((item, idx) => {
           if (item.managing && item.managing.length > 0) {
+            // if there are employess that this employee manages
             return (
               <TreeNode
                 label={
-                  <Card
-                    name={item.name}
-                    team={item.team}
-                    role={item.designation}
-                  />
+                  <Card name={item.name} team={item.team} role={item.role} />
                 }
                 key={idx}
               >
@@ -25,14 +22,11 @@ function EmployeeTreeNode({ employees }: { employees?: EmpDataType[] }) {
             );
           }
 
+          // if there are no other employees that this employee manages (TreeNode should not contain any children)
           return (
             <TreeNode
               label={
-                <Card
-                  name={item.name}
-                  team={item.team}
-                  role={item.designation}
-                />
+                <Card name={item.name} team={item.team} role={item.role} />
               }
               key={idx}
             />
@@ -55,7 +49,7 @@ export default function EmployeeChart({
             <Card
               name={employees.name}
               team={employees.team}
-              role={employees.designation}
+              role={employees.role}
             />
           }
         >
